@@ -1,0 +1,47 @@
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.text.DateFormat;
+import java.text.ParseException;
+
+public class Employee
+{
+	/*fields*/
+	String name;
+	String address;
+	String dateOfBirth;
+	String dateOfHired;
+	long salary;
+	
+	/*Constructor*/
+	public Employee(String name, String address, String dateOfBirth, 
+			String dateOfHired, long salary)
+	{
+	this.name = name;
+	this.address= address;
+	this.dateOfBirth = dateOfBirth;
+	this.dateOfHired = dateOfHired;
+	this.salary  = salary;
+	}
+	
+	/*Method to format the date*/
+	public Date birthdDate()
+	{
+		 DateFormat df = new SimpleDateFormat("MM/dd/yyyy");
+		 Date birthDate= null;
+		 
+		 if(dateOfBirth!= null)
+		 {
+			 try 
+			 {
+				 birthDate = df.parse(dateOfBirth);
+			 }
+			  catch (ParseException e) 
+			 {
+				e.printStackTrace();
+			 }
+		 }
+		 
+		 return birthDate;
+	}
+
+}

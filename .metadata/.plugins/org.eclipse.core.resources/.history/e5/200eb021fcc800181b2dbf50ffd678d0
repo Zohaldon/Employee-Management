@@ -1,0 +1,41 @@
+import java.util.Scanner;
+
+public class EmployeeDriverClass
+{
+
+	public static void main(String[] args) 
+	{
+		 String name;
+		 String address;
+		 String dateOfBirth;
+		 String dateOfHire;
+		 long salary;
+		 
+		 Scanner scString=new Scanner(System.in);
+		 
+		 System.out.println("Please enter the employee's name: ");
+		 name = scString.next();
+		 System.out.println("Please enter the Employee's address: ");
+		 address = scString.next();
+		 
+		 System.out.println("Please enter the Employee's date of birth: ");
+		 dateOfBirth = scString.next();
+		 System.out.println("Please enter the Employee's date of hiring: ");
+		 dateOfHire = scString.next();
+		 
+		 System.out.println("Please enter the Employee's salary: ");
+		 salary = scString.nextLong();
+		 	 
+		 //calls Constructor 2
+		 Employee empDetails2 = new Employee(name,address,dateOfHire,dateOfBirth,salary);
+		 
+		 //displays values from Constructor1
+		 //empDetails.display();
+		 //display values from Constructor2
+		 empDetails2.info();
+		 
+		 scString.close();
+		 
+	}
+
+}

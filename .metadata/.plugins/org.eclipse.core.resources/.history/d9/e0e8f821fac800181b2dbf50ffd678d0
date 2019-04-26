@@ -1,0 +1,14 @@
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.text.DateFormat;
+import java.text.ParseException;
+
+public class Employee
+{
+	String name;
+	String address;
+	String dateOfHired;
+	String dateOfBirth;
+	long salary;
+
+}

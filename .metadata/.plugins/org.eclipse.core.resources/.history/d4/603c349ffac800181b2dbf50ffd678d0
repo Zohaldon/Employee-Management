@@ -1,0 +1,27 @@
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.text.DateFormat;
+import java.text.ParseException;
+
+public class Employee
+{
+	/*fields*/
+	String name;
+	String address;
+	String dateOfBirth;
+	String dateOfHired;
+	long salary;
+	
+	/*Constructor*/
+	public Employee(String name, String address, String dateOfBirth, 
+			String dateOfHired, long salary)
+	{
+	this.name = name;
+	this.address= address;
+	this.dateOfBirth = dateOfBirth;
+	this.dateOfHired = dateOfHired;
+	this.salary  = salary;
+	}
+
+	
+}

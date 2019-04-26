@@ -1,0 +1,80 @@
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.text.DateFormat;
+import java.text.ParseException;
+
+public class Employee
+{
+	/*fields*/
+	String name;
+	String address;
+	String dateOfBirth;
+	String dateOfHired;
+	long salary;
+	
+	/*Constructor*/
+	public Employee(String name, String address, String dateOfBirth, 
+			String dateOfHired, long salary)
+	{
+	this.name = name;
+	this.address= address;
+	this.dateOfBirth = dateOfBirth;
+	this.dateOfHired = dateOfHired;
+	this.salary  = salary;
+	}
+	
+	/*Method to format the birthday date*/
+	public Date birthdDate()
+	{
+		 DateFormat formatBirdthdayDate = new SimpleDateFormat("MM/dd/yyyy");
+		 Date birthDate= null;
+		 
+		 if(dateOfBirth!= null)
+		 {
+			 try 
+			 {
+				 birthDate = formatBirdthdayDate.parse(dateOfBirth);
+			 }
+			  catch (ParseException e) 
+			 {
+				e.printStackTrace();
+			 }
+		 }
+		 
+		 return birthDate;
+	}
+	
+	/*Method to format date hired*/
+	public Date hiringDate()
+	{
+		DateFormat formatDateHired = new SimpleDateFormat("MM/dd/yyyy");
+		Date hireDate= null;
+		
+		if(dateOfHired!=null)
+		{
+			try
+			{ 
+				hireDate = formatDateHired.parse(dateOfHired);
+			}
+			catch (ParseException e)
+			{ 
+				e.printStackTrace();
+			}
+		}
+		
+		return hireDate;
+	}
+	
+	/*Get info method to string*/
+	 public void display()
+	 {
+		 System.out.println("The Data of the New Employee as Entered:");
+		 System.out.println("The employee's name is : "+name);
+		 System.out.println("The employee's address is : "+address);
+		 System.out.println("The employee's hiring date is : "+hiringDate());
+		 System.out.println("The employee's birthdate is : "+birthDate());
+		 System.out.println("The employee's salary is : "+salary);
+	 }
+
+
+}
